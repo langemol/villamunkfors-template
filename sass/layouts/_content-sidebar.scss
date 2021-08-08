@@ -4,6 +4,16 @@
 
 @media only screen and (min-width: 768px) {
 	.site {
+		display: grid;
+		grid-template-columns: ($size__site-sidebar) auto;
+		grid-template-areas:
+		"header header"
+		"menu main"
+		"footer footer";
+	}
+}
+@media only screen and (min-width: 1030px) {
+	.site {
 		max-width: 1480px;
 		display: grid;
 		grid-template-columns: ($size__site-sidebar) auto 200px;
