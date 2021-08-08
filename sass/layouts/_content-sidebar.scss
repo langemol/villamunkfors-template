@@ -1,15 +1,16 @@
 .site {
+	max-width: 1480px;
 	display: grid;
-	grid-template-columns: auto ($size__site-sidebar);
+	grid-template-columns: ($size__site-sidebar) auto ($size__site-sidebar);
 	grid-template-areas:
-		"header header"
-		"main sidebar"
-		"footer footer";
+	"header header header"
+	"menu main sidebar"
+	"footer footer footer";
 }
 
 .site-header {
 	grid-area: header;
-}
+	}
 
 .site-main {
 	grid-area: main;
@@ -18,7 +19,7 @@
 
 .widget-area {
 	grid-area: sidebar;
-}
+		}
 
 .site-footer {
 	grid-area: footer;
