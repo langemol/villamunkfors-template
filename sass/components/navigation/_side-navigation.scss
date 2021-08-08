@@ -2,6 +2,7 @@
   grid-area: menu;
 
   ul {
+    display: none;
     list-style-type: none;
     margin: 0;
 
@@ -19,3 +20,18 @@
   }
 }
 
+.menu-toggle,
+.side-navigation.toggled ul {
+  display: block;
+}
+
+@media screen and (min-width: 768px) {
+
+  .menu-toggle {
+    display: none;
+  }
+
+  .side-navigation ul {
+    display: block;
+  }
+}

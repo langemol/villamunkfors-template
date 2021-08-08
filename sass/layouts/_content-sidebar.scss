@@ -1,11 +1,30 @@
-.site {
-	max-width: 1480px;
-	display: grid;
-	grid-template-columns: ($size__site-sidebar) auto 200px;
-	grid-template-areas:
-	"header header header"
-	"menu main sidebar"
-	"footer footer footer";
+.widget-area {
+	display: none;
+}
+
+@media only screen and (min-width: 768px) {
+	.site {
+		max-width: 1480px;
+		display: grid;
+		grid-template-columns: ($size__site-sidebar) auto 200px;
+		grid-template-areas:
+		"header header header"
+		"menu main sidebar"
+		"footer footer footer";
+	}
+
+	.widget-area {
+		display: block;
+		grid-area: sidebar;
+
+		figure {
+			margin: 0;
+
+			img {
+				display: block;
+			}
+		}
+	}
 }
 
 .site-header {
@@ -26,19 +45,6 @@
 
 	background-color: #FFCC77;
 	padding: 0 20px;
-}	
-
-.widget-area {
-	display: block;
-	grid-area: sidebar;
-
-	figure {
-		margin: 0;
-
-		img {
-			display: block;
-		}
-	}
 }
 
 .site-footer {
