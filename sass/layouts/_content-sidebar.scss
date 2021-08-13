@@ -15,6 +15,7 @@
 @media only screen and (min-width: 1030px) {
 	.site {
 		max-width: 1480px;
+		margin: auto;
 		display: grid;
 		grid-template-columns: ($size__site-sidebar) auto 200px;
 		grid-template-areas:

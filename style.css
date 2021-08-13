@@ -15,7 +15,7 @@ Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-com
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned.
 
-test is based on Underscores https://underscores.me/, (C) 2012-2020 Automattic, Inc.
+villamunkfors is based on Underscores https://underscores.me/, (C) 2012-2020 Automattic, Inc.
 Underscores is distributed under the terms of the GNU GPL v2 or later.
 
 Normalizing styles have been helped along thanks to the fine work of
@@ -628,7 +628,7 @@ textarea {
 @media only screen and (min-width: 768px) {
 	.site {
 		display: grid;
-		grid-template-columns: 25% auto;
+		grid-template-columns: 200px auto;
 		grid-template-areas: "header header" "menu main" "footer footer";
 	}
 }
@@ -636,8 +636,9 @@ textarea {
 @media only screen and (min-width: 1030px) {
 	.site {
 		max-width: 1480px;
+		margin: auto;
 		display: grid;
-		grid-template-columns: 25% auto 200px;
+		grid-template-columns: 200px auto 200px;
 		grid-template-areas: "header header header" "menu main sidebar" "footer footer footer";
 	}
 	.widget-area {
@@ -656,7 +657,6 @@ textarea {
 	grid-area: header;
 	text-align: center;
 	font-size: 40px;
-	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
 }
 
 .site-header .site-title a {
@@ -680,7 +680,7 @@ textarea {
 .no-sidebar .site {
 	display: grid;
 	grid-template-columns: auto;
-	grid-template-areas: "header" "main" "footer";
+	grid-template-areas: "header" "main" "footer";
 }
 
 /*--------------------------------------------------------------
@@ -688,98 +688,15 @@ textarea {
 --------------------------------------------------------------*/
 /* Navigation
 --------------------------------------------- */
-.main-navigation {
-	display: block;
-	width: 100%;
-}
-
-.main-navigation ul {
-	display: none;
-	list-style: none;
-	margin: 0;
-	padding-left: 0;
-}
-
-.main-navigation ul ul {
-	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
-	float: left;
-	position: absolute;
-	top: 100%;
-	left: -999em;
-	z-index: 99999;
-}
-
-.main-navigation ul ul ul {
-	left: -999em;
-	top: 0;
-}
-
-.main-navigation ul ul li:hover > ul,
-.main-navigation ul ul li.focus > ul {
-	display: block;
-	left: auto;
-}
-
-.main-navigation ul ul a {
-	width: 200px;
-}
-
-.main-navigation ul li:hover > ul,
-.main-navigation ul li.focus > ul {
-	left: auto;
-}
-
-.main-navigation li {
-	position: relative;
-}
-
-.main-navigation a {
-	display: block;
-	text-decoration: none;
-}
-
-/* Small menu. */
-.menu-toggle,
-.main-navigation.toggled ul {
-	display: block;
-}
-
-@media screen and (min-width: 37.5em) {
-	.menu-toggle {
-		display: none;
-	}
-	.main-navigation ul {
-		display: flex;
-	}
-}
-
-.site-main .comment-navigation, .site-main
-.posts-navigation, .site-main
-.post-navigation {
-	margin: 0 0 1.5em;
-}
-
-.comment-navigation .nav-links,
-.posts-navigation .nav-links,
-.post-navigation .nav-links {
-	display: flex;
-}
-
-.comment-navigation .nav-previous,
-.posts-navigation .nav-previous,
-.post-navigation .nav-previous {
-	flex: 1 0 50%;
-}
-
-.comment-navigation .nav-next,
-.posts-navigation .nav-next,
-.post-navigation .nav-next {
-	text-align: end;
-	flex: 1 0 50%;
-}
-
 .side-navigation {
 	grid-area: menu;
+	position: relative;
+	/** to position the mobile menu button absolute **/
+}
+
+.side-navigation hr {
+	margin: 0;
+	background-color: #ffcc77;
 }
 
 .side-navigation ul {
@@ -793,21 +710,36 @@ textarea {
 	text-decoration: none;
 	color: #fff;
 	font-size: 20px;
+	margin: 10px 0 20px 0;
+}
+
+.menu-toggle {
+	position: absolute;
+	top: -61px;
+	border: 1px solid #ffcc77;
+	background: none;
+	font-size: 20px;
 	line-height: 40px;
-	margin: 10px 0;
+	color: #ffcc77;
+	text-decoration: underline;
 }
 
 .menu-toggle,
+.side-navigation.toggled hr,
 .side-navigation.toggled ul {
 	display: block;
 }
 
-@media screen and (min-width: 37.5em) {
+@media screen and (min-width: 768px) {
+	.side-navigation hr,
+	.side-navigation.toggled hr,
 	.menu-toggle {
 		display: none;
 	}
 	.side-navigation ul {
 		display: block;
+		padding: 0;
+		margin-left: 1.5em;
 	}
 }
 

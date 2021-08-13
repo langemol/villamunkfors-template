@@ -1,5 +1,11 @@
 .side-navigation {
   grid-area: menu;
+  position: relative; /** to position the mobile menu button absolute **/
+
+  hr {
+    margin: 0;
+    background-color: $color__secondary;
+  }
 
   ul {
     display: none;
@@ -13,25 +19,39 @@
         text-decoration: none;
         color: #fff;
         font-size: 20px;
-        line-height: 40px;
-        margin: 10px 0;
+        margin: 10px 0 20px 0;
       }
     }
   }
 }
 
+.menu-toggle {
+  position: absolute;
+  top: -61px;
+  border: 1px solid $color__secondary;
+  background: none;
+  font-size: 20px;
+  line-height: 40px;
+  color: $color__secondary;
+  text-decoration: underline;
+}
 .menu-toggle,
+.side-navigation.toggled hr,
 .side-navigation.toggled ul {
   display: block;
 }
 
 @media screen and (min-width: 768px) {
 
+  .side-navigation hr,
+  .side-navigation.toggled hr,
   .menu-toggle {
     display: none;
   }
 
   .side-navigation ul {
     display: block;
+    padding: 0;
+    margin-left: 1.5em;
   }
 }
